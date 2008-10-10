@@ -88,9 +88,9 @@ namespace Aonaware.Syslog.Tests
 				_messageCount = 0;
 				SyslogMessage msg = new SyslogMessage("localhost", MessageText);
 
-				using (SyslogClient cl = new SyslogClient(IPAddress.Loopback))
+				using (SyslogUdpClient cl = new SyslogUdpClient())
 				{
-					cl.Connect();
+                    cl.Connect(IPAddress.Loopback);
 
 					for (int i=0; i<MessagesToSend; i++)
 					{

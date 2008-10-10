@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aonaware")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("(C)2007 Adrian O' Neill")]
+[assembly: AssemblyCopyright("(C)2008 Adrian O' Neill")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]	
 

@@ -102,7 +102,7 @@ namespace Aonaware.SyslogReceiver
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Copyright ©2007 Adrian O\' Neill";
+            this.label2.Text = "Copyright ©2008 Adrian O\' Neill";
             // 
             // pctIcon
             // 
