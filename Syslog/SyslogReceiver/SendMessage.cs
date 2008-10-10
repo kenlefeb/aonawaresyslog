@@ -76,7 +76,7 @@ namespace Aonaware.SyslogReceiver
 			}
 			comSeverity.SelectedItem = SyslogMessage.DefaultSeverity;
 
-			txtPort.Text = SyslogClient.DefaultPort.ToString();
+			txtPort.Text = SyslogUdpClient.DefaultPort.ToString();
 			txtServer.Text = "localhost";
 		}
 
@@ -339,10 +339,9 @@ namespace Aonaware.SyslogReceiver
 						DateTime.Now);
 
 					// Send message
-					using (SyslogClient client = new SyslogClient(destAddress,
-							   Convert.ToInt32(txtPort.Text)))
+					using (SyslogClient client = new SyslogUdpClient())
 					{
-						client.Connect();
+                        client.Connect(destAddress, Convert.ToInt32(txtPort.Text));
 						client.Send(msg);
 					}
 				}

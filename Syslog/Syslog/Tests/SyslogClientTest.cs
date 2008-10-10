@@ -25,16 +25,16 @@ using NUnit.Framework;
 namespace Aonaware.Syslog.Tests
 {
 	/// <summary>
-	/// Test the SyslogClient class.
+	/// Test the SyslogUdpClient class.
 	/// </summary>
 	[TestFixture]
-	public class SyslogClientTest
+	public class SyslogUdpClientTest
 	{
 		[Test] public void SendMessage()
 		{
 			SyslogMessage msg = new SyslogMessage("localhost", "testing");
-			SyslogClient cl = new SyslogClient(IPAddress.Loopback);
-			cl.Connect();
+			SyslogUdpClient cl = new SyslogUdpClient();
+            cl.Connect(IPAddress.Loopback);
 			cl.Send(msg);
 			cl.Close();
 		}
@@ -42,9 +42,9 @@ namespace Aonaware.Syslog.Tests
 		[Test] public void SendMessageUsing()
 		{
 			SyslogMessage msg = new SyslogMessage("localhost", "testing");
-			using (SyslogClient cl = new SyslogClient(IPAddress.Loopback))
-			{																		 
-				cl.Connect();
+			using (SyslogUdpClient cl = new SyslogUdpClient())
+			{
+                cl.Connect(IPAddress.Loopback);
 				cl.Send(msg);
 			}
 		}
